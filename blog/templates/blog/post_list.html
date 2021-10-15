@@ -16,10 +16,13 @@
     <p>This is Watermelon fruit post </p>
 </article>
 
-<article>
-    <time>Published at: 14-06-2021 ,20:08 </time>
-    <h2><a href="/">Mango Fruit</a></h2>
-    <p>This is Mango fruit post </p>
-</article>
+{% for post in posts %}
+    <article>
+        <time>Published: {{ post.published_date }}</time>
+        <h2><a href='/'>{{ post.title }}</a></h2>
+        <p>{{ post.text |linebreaksbr }}</p>
+    </article>
+{% endfor %}
+
 </body>
 </html>
