@@ -12,6 +12,11 @@
 <body>
     <header class='page-header'>
         <div class="container">
+            {% if user.is_autheticated %}
+                <a href="{% url 'post_new' %}" class="top-menu">
+                    {% include './icon/file-earmark-plus.svg' %}
+                </a>
+            {% endif %}
             <h1><a href="/">Django Blog Post</a></h1>
         </div>
     </header>
